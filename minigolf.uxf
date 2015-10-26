@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>672</x>
-      <y>147</y>
+      <x>686</x>
+      <y>434</y>
       <w>154</w>
       <h>154</h>
     </coordinates>
@@ -21,8 +21,8 @@ time Time[1]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>609</x>
-      <y>392</y>
+      <x>581</x>
+      <y>735</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
@@ -35,19 +35,19 @@ ComponyReservation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>679</x>
-      <y>294</y>
-      <w>49</w>
-      <h>112</h>
+      <x>651</x>
+      <y>581</y>
+      <w>91</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;140.0</additional_attributes>
+    <additional_attributes>110.0;10.0;10.0;220.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>777</x>
-      <y>392</y>
+      <y>735</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
@@ -60,21 +60,21 @@ NormalReservation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>749</x>
-      <y>294</y>
-      <w>112</w>
-      <h>112</h>
+      <x>763</x>
+      <y>581</y>
+      <w>98</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;140.0</additional_attributes>
+    <additional_attributes>10.0;10.0;120.0;220.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>952</x>
-      <y>392</y>
+      <x>959</x>
+      <y>735</y>
       <w>147</w>
-      <h>133</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;subkind&gt;&gt;
 BirthdayReservation
@@ -85,23 +85,23 @@ BirthdayReservation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>784</x>
-      <y>294</y>
-      <w>252</w>
-      <h>112</h>
+      <x>798</x>
+      <y>581</y>
+      <w>245</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;340.0;140.0</additional_attributes>
+    <additional_attributes>10.0;10.0;330.0;220.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>294</x>
-      <y>154</y>
+      <y>308</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;kind&gt;&gt;
+    <panel_attributes>&lt;&lt;category&gt;&gt;
 Service
 --
 </panel_attributes>
@@ -110,8 +110,8 @@ Service
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
-      <y>364</y>
+      <x>203</x>
+      <y>581</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
@@ -124,8 +124,8 @@ Food
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>364</x>
-      <y>364</y>
+      <x>371</x>
+      <y>581</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
@@ -139,36 +139,124 @@ Drink
     <id>Relation</id>
     <coordinates>
       <x>378</x>
-      <y>280</y>
-      <w>91</w>
-      <h>98</h>
+      <y>434</y>
+      <w>98</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;120.0;210.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>273</x>
-      <y>280</y>
-      <w>91</w>
-      <h>98</h>
+      <x>280</x>
+      <y>434</y>
+      <w>84</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>110.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>100.0;10.0;10.0;210.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>434</x>
-      <y>196</y>
-      <w>252</w>
-      <h>42</h>
+      <y>364</y>
+      <w>266</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=n
 m2=m
 contains</panel_attributes>
-    <additional_attributes>10.0;30.0;340.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;360.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>938</x>
+      <y>49</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;kind&gt;&gt;
+Person
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1057</x>
+      <y>238</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;role&gt;&gt;
+Player
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1001</x>
+      <y>175</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;190.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>812</x>
+      <y>238</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;role&gt;&gt;
+Employee
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>875</x>
+      <y>175</y>
+      <w>112</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>140.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>161</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;kind&gt;&gt;
+Playground
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>287</y>
+      <w>273</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=n
+m2=m
+works &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;170.0;370.0;120.0</additional_attributes>
   </element>
 </diagram>
