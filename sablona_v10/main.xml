@@ -66,20 +66,13 @@
 					<problem_domain>
 						<para>Nad systémem má být postavená webová aplikace, skrz kterou bude mít uživatel možnost rezervace a následné platby.</para>
 
-						<para>Oprávněný zaměstnanec bude moci v administrační objednávku modifikovat.</para>
+						<para>Zaměstnanec bude moci v administračním rozhraní rezervaci přidat nebo odebrat.</para>
 
-						<para>O hráč, u kterého nás zajímá e-mail a jméno bude moci. budeme evidovat celkové skóre v jednotlivých hrách.
-						      Skóre zaznamená zaměstnanec v budoucnu se ovšem plánuje synchnonizace s mobilní aplikací. 
+						<para>Hráč si se může ve skupině jiných hráčů zůčastnit hry. U hráče je nutné rozlišit, zda se jedná o amatéra nebo profesionála. Zamětnanec a hráč mají některé společné vlastnoti, kterými jsou jméno a věk.
 						 </para>
 
-						<para>Klíčovým bodem celé aplikace je rezervace. Rezervace dělíme do tří typů. Obyčejnou herní rezervaci, firemní akci a narozeninový večírek.
-						      Všechny mají spolčené vlastnosti jako datum rezervace,čas a email rezervátora. Ovšem každá bude mít své vlastní specifické atributy.
+						<para>Klíčovým bodem celé aplikace je rezervace. Rezervace je možná na jméno, datum a čas a vztahuje se na konkrétní hřište. K rezervaci je možné přikoupit speciální služby v podobě jídla a pití. U jídla nás zajímá váha a u pití objem.
 						 </para>
-						<para>K rezervaci bude možno přiobjednat službu navíc, jídlo nebo pití.
-						</para>
-
-
-
 						<comment>
 							<para>Tohle je komentář k 2. odstavci popisu semestrální práce.</para>
 
@@ -97,7 +90,7 @@
 						</problem_domain>
 
 						<purpose>  
-							<para>Vedení fakulty potřebuje jednotný informační systém pro správu kateder, jimi vyučovaných předmětů a pracovníků kateder.</para>
+							<para>Společnost potřebuje sjednotit informační systém pro zaznamenávání jednotlivých her a přidat k němu funkcionality rezervačního systému.</para>
 
 							<comment>
 								<para>Cílem účelu je jasně definovat, jaký je hlavní cíl aplikace, co je jejím hlavním účelem a přínosem.</para>
@@ -106,13 +99,10 @@
 
 						<functions>
 							<function>
-								Systém umožňuje vyhledat předměty vyučované a garantované jednotlivými katedrami.
+								Systém umožňuje přidat a odebrat rezervaci.
 							</function>
 							<function>
-								Systém umožňuje vyhledat předměty aktuálně studované jednotlivými studenty.
-							</function>
-							<function>
-								...
+								Systém umožňuje evidovat zaměstance a místa kde pracují.
 							</function>
 							<comment>
 								<para>Klíčové funkce určují, co má systém dělat, aby naplnil svůj účel. Výčet funkcí je podrobné zadání úlohy, které vznikne rozborem problému,
@@ -122,9 +112,9 @@
 							</functions>
 
 							<rules>
-								<rule>Každému zaměstnanci katedry musí být alespoň 18 let.</rule>
-								<rule>Každá katedra musí mít právě jednoho vedoucího.</rule>
-								<rule>...</rule>
+								<rule>Zaměstnanci musí být alespoň 18 let.</rule>
+								<rule>Každý zaměstanec pracuje právě na jednom hřišti.</rule>
+								<rule>Každý hráč je buď amatér nebo profesionál.</rule>
 								<comment>
 									<para>Pravidla a omezení určují, jaké podmínky mají být v systému průběžně splněné, aby mohl správně  fungovat. 
 										Splnění pravidel se má kontrolovat vždy, když na splnění pravidel záleží (např. před vykonáním funkce, která splnění pravidla předpokládá,
@@ -138,17 +128,14 @@
 
 										<queries>
 											<query>
-												Najdi všechny předměty vyučované katedrou DOP.
+												Zamestnanec Petr Novák přidá novou rezervaci pro skupinu 3 hráčů, kteří požadují kuřecí stake.
 											</query>
 											<query>
-												Najdi všechny předměty studované studentem Pontiac.
+												Najdi všechny hráče, kteří se účastnili alespoň 2 her.
 											</query>
 											<query>
-												Najdi všechny předměty garantované katedrou DOP.
-											</query>
-											<query>
-												...
-											</query>
+												Najdi rezervaci, která je pro nejvíc hráčů a zároveň má objem piva vyšší než 50 litrů. 
+											</query>	
 											<comment>
 												<para>Dotazy slouží k demonstraci správné funkčnosti klíčových funkcí systému. Pomocí těchto dotazů ukážeme,
 													že náš systém umí splnit všechny požadavky, které na něj byly kladeny. Musí tedy vycházet z klíčových funkcí a účelu systému.</para>
@@ -235,7 +222,7 @@
 														<cm_picture>
 															<mediaobject>
 																<imageobject>
-																	<imagedata fileref="university1.png" />
+																	<imagedata fileref="minigolf.png" />
 																</imageobject>
 															</mediaobject>
 														</cm_picture>
@@ -277,7 +264,7 @@
 																			<name>Kind</name>
 																			<usages>
 																				<usage>
-																					<class>Person, University, Subject</class>
+																					<class>Person, Game, Reservation</class>
 																					<relation>-</relation>
 																				</usage>
 																			</usages>
