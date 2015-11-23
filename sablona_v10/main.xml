@@ -21,9 +21,9 @@
 	<author1>
 		<aname>Petr Hanzl</aname>
 
-		<uname>objekjan</uname>
+		<uname>hanzlpe2</uname>
 
-		<email>objekjan@fit.cvut.cz</email>
+		<email>hanzlpe@2fit.cvut.cz</email>
 	</author1>
 	<author2>
 		<aname>Samuel Butta</aname>
@@ -246,44 +246,45 @@
 
 																	<cm_discussion>
 																		<para>
-																			Protože studenti i zaměstnanci jsou lidé, zvolil jsem jako Kind poskytující identitu třídu Person. Od této třídy dědí jednotlivé role Professor a Student, protože osoba může být studentem i zaměstancem (např. doktorandi). Professor představuje zaměstnance na katedře, který opět může fungovat v různých rolích jako garant předmětu nebo vyučující.
-																		</para>
+	
+Zaměstanec i hráč mají společené vlastnosti, bylo vhodné vytvořit Kind Person, z kterého obě třídy Employee i Player dědí z třídy Person.								</para>
 																		<para>
-																			Abychom mohli v systému evidovat všechny aktuální studenty, tedy i ty, kteří dočasně přerušili studium, vytvořil jsem dvě fáze studenta - student je buď aktivní a má zapsány předměty, nebo je suspendován a předměty žádné zapsané nemá.
-																		</para>
+Dále jsme použili typ Kind pro třídu Game. Hru hraje více lidí, tedy logickým krokem bylo zvolení typu Collective na třídu Group. Skupina se skládá z jednotlivých hrčů. Jelikož u hráče potřebujeme výlučný vztah, zda se jedná o amatéra nebo profesionála. Použili jsme tedy Phase, která je disjoint, complete.										</para>
 																		<para>
-																			Universitu jsem se rozhodl modelovat jako integrální celek složený z rektorátu a fakult, kvůli potřebě vyjádřit neoddělitelnost fakult i rektorátu od univerzity. Jejich oddělením by totiž rektorát přestal být rektorátem, podobně pak fakulta.
-																		</para>
-																		<para>
-																			Co se týče relací, rozhodl jsem se vytvořit relátor. který SubjectRegistration umožňuje evidovat datum zápisu předmětu studentem. Pro evidenci jednotlivých cvičení a přednášek jsem využil relator Teaching, který vlastně realizuje vazbu mezi vyučujícím a předmětem.
-																		</para>
-																	</cm_discussion>
+Rezervace je modelovaná jako Kind. Rezervaci musí být nutně přiřazena hra. Rezervace obsahuje nepovinně právě Služby.																	</para>
 
-																	<cm_concepts>
+<para>
+Třída Food a Drink dědí z Kategorie Service. U tříd Food a Drink je použit typ quantity, který charakterizuje specifickou vlastnost, tedy váhu a objem.
+</para>
+																	
+																</cm_discussion>
+
+																		<cm_concepts>
 																		<cm_concept>
 																			<name>Kind</name>
 																			<usages>
 																				<usage>
-																					<class>Person, Game, Reservation</class>
-																					<relation>-</relation>
+																					<class>Playground, Person, Reservation, Game</class>
+																					<relation>Playground - Reservation</relation>
 																				</usage>
 																			</usages>
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Subkind</name>
+																			<usages>
+																				<usage>
+																					<class>Food, Drink</class>
+																					<relation>Food - Service - Drink</relation>
+																				</usage>
+																			</usages>
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Role</name>
 																			<usages>
 																				<usage>
-																					<class>Teacher</class>
-																					<relation>Person - Professor - Subject</relation>
-																					<comment>Učitel je osoba vyučující daný předmět.</comment>
-																				</usage>
-																				<usage>
-																					<class>Student</class>
-																					<relation>Person - Subject</relation>
-																					<comment>Student je osoba, která je zapsaná ke studiu předmětu.</comment>
+																					<class>Employee, Player</class>
+																					<relation>Person </relation>
+																					<comment>Role dědí ze třídy Person</comment>
 																				</usage>
 																			</usages>
 																		</cm_concept>
@@ -291,14 +292,20 @@
 																			<name>Phase</name>
 																			<usages>
 																				<usage>
-																					<class>Active Student, Suspended Student</class>
-																					<relation>Student</relation>
-																					<comment>Student může být aktivní, nebo jeho studium může být přerušeno.</comment>
+																					<class>Amateur, Professional</class>
+																					<relation>Player</relation>
+																					<comment>Hráč je amatér nebo profesionál</comment>
 																				</usage>
 																			</usages>
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Category</name>
+																			<usages>
+																				<usage>
+																					<class>Service</class>
+																					<relation>Drink, Food, Reservation</relation>
+																				</usage>
+																			</usages>
 																		</cm_concept>
 																		<cm_concept>
 																			<name>RoleMixin</name>
@@ -308,41 +315,23 @@
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Whole</name>
-																			<usages>
-																				<usage>
-																					<class>University</class>
-																					<relation>University - Rectorate, University - Faculty</relation>
-																					<comment>Univerzita je celek tvořený rektorátem a jednotlivými fakultami.</comment>
-																				</usage>
-																			</usages>
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Part</name>
-																			<usages>
-																				<usage>
-																					<class>Rectorate, Faculty</class>
-																					<relation>University</relation>
-																					<comment>Obě části jsou inseparable a povinné. Tj. pouze jedna kombinace povinností vztahu celek-část. Za toto nebude žádný bod.</comment>
-																				</usage>
-																			</usages>
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Quantity</name>
+																			<usages>
+																				<usage>
+																					<class>Volume, Weight</class>
+																				</usage>
+																			</usages>
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Collective</name>
 																			<usages>
 																				<usage>
-																					<class>Faculty</class>
-																					<relation>Department</relation>
-																					<comment>Fakulta je tvořena skupinou kateder.</comment>
-																				</usage>
-																			</usages>
-																			<usages>
-																				<usage>
-																					<class>Department</class>
-																					<relation>Professor</relation>
-																					<comment>Katedra je tvořena jejími zaměstnanci.</comment>
+																					<class>Group</class>
 																				</usage>
 																			</usages>
 																		</cm_concept>
@@ -354,13 +343,6 @@
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Relator</name>
-																			<usages>
-																				<usage>
-																					<class>Subject Registration</class>
-																					<relation>Student - Subject</relation>
-																					<comment>Student se ke studiu předmětu zapisuje zápisem do indexu se zaznamenaným datem zápisu.</comment>
-																				</usage>
-																			</usages>
 																		</cm_concept>
 																		<cm_concept>
 																			<name>Formal</name>
@@ -375,274 +357,8 @@
 
 																	</conceptual_model>
 
-																	<implementation_model>
-																		<im_picture>
-																			<mediaobject>
-																				<imageobject>
-																					<imagedata fileref="university1_impl.png" />
-																				</imageobject>
-																			</mediaobject>
-																		</im_picture>
+								
 
-																		<comment>
-																			<para>Požadavky na implementační model tříd:</para>
-
-																			<para>Jedná se o objektový implementační model UML, který definuje způsob implementace jednotlivých konceptů konceptuálního modelu OntoUML v čistém
-																				objektovém modelu s pomocí tříd, atributů, skládání, dědění a kolekcí.</para>
-
-																				<para>V modelu by měly být navrženy vhodné realizace jednotlivých konceptů, vhodně navržené směry
-																					navigace vazeb vzhledem k dotazům a pravidlům.</para>
-
-																					<para>V implementačním modelu používejte takové názvy, které jsou použity v následné implementace. Jedná se o textové a grafické znázornění reálné implementace.</para>
-																				</comment>
-
-																				<im_discussion>
-																					<para>Koncept X jsem implementoval jako Y protože ...
-																						Zvolil jsem směr navigace od H k I, protože je požadován dotaz D.
-																						Asociaci V-W jsem realizoval pomocí tzv. "brusle", protože bude třeba efektivně provádět dotazy z obou stran.
-																						...
-																					</para>
-																				</im_discussion>
-																			</implementation_model>
-
-																			<implementation>
-																				<package>
-																					<file fileref="semestralka-uni.st" />
-																				</package>
-																				<impl_discussion>
-																					<para>Implementace obsahuje N tříd a M testů.
-																					</para>
-																					<para>Požadavek X jsem zajistil implementací metody Y, která používá Z.
-																						Konzistenci "brusle" mezi V a W jsem zajistil tak a tak.
-																						...
-																					</para>
-
-																					<comment>
-																						<para>V tomto místě by měla být popsána implementace navrženého modelu -- způsob řešení dotazů a pravidel, implementace
-																							programové logiky.</para>
-																						</comment>
-																					</impl_discussion>
-
-																					<impl_concepts>
-																						<impl_concept>
-																							<name>Enforcing of multiplicity 1 (arrow side)</name>
-																							<usages>
-																								<usage>
-																									<class>Subject</class>
-																									<method>class method #guarantor:</method>
-																								</usage>
-																								<usage>
-																									<class>SubjectRegistration</class>
-																									<method>class method #subject:</method>
-																								</usage>
-																								<usage>
-																									<comment>(1 point total)</comment>
-																								</usage>
-																							</usages>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Printing method (polymorphic)</name>
-																							<usages>
-																								<usage>
-																									<class>Subject</class>
-																									<method>#printString:</method>
-																								</usage>
-																								<usage>
-																									<comment>(1 point total)</comment>
-																								</usage>
-																							</usages>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Class method</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Class method polymorphism</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Collection operations</name>
-																							<usages>
-																								<usage>
-																									<class>ActiveStudentPhase</class>
-																									<method>#studiesSet</method>
-																									<comment>#collect:</comment>
-																								</usage>
-																								<usage>
-																									<class>Department</class>
-																									<method>#GuaranteedSubjectsSet:</method>
-																									<comment>#flatCollect:, #select:</comment>
-																								</usage>
-																								<usage>
-																									<class>Department</class>
-																									<method>#taughtSubjectsSet:</method>
-																									<comment>#flatCollect:</comment>
-																								</usage>
-																								<usage>
-																									<comment>(3 points total: #collect:, #flatCollect, #select:)</comment>
-																								</usage>
-																							</usages>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Extending super</name>
-																							<usages>
-																								<usage>
-																									<class>ResearchMembershipRelator</class>
-																									<method>#initialize</method>
-																								</usage>
-																								<usage>
-																									<comment>(1 point total)</comment>
-																								</usage>
-																							</usages>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Message comment that executes</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Simple delegation</name>
-																							<usages>
-																								<usage>
-																									<class>Student, ActiveStudentPhase</class>
-																									<method>#studies</method>
-																								</usage>
-																								<usage>
-																									<comment>(2 points total)</comment>
-																								</usage>
-																							</usages>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Self delegation</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Choosing object (polymorphism)</name>
-																							<usages>
-																								<usage>
-																									<class>TeacherRole, SubjectGuarantorRole</class>
-																									<method>#salaryComponent</method>
-																									<comment>Choosing object implemented in test #testSalaryPolymorphism.</comment>
-																								</usage>
-																								<usage>
-																									<comment>(2 points total)</comment>
-																								</usage>
-																							</usages>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Double dispatch</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Converter  method</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Converter constructor method</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Constant method</name>
-																							<usages>
-																								<usage>
-																									<class>Professor</class>
-																									<method>class methods #fixRate, #bonusPerYear</method>
-																								</usage>
-																								<usage>
-																									<comment>(1 point total)</comment>
-																								</usage>
-																							</usages>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Lazy initialization</name>
-																							<usages>
-																								<usage>
-																									<class>ActiveStudentPhase</class>
-																									<method>#registeredSubjectsCol</method>
-																									<comment>Collection initialization</comment>
-																								</usage>
-																								<usage>
-																									<class>SubjectGuarantorRole</class>
-																									<method>#startDate</method>
-																									<comment>Default value initialization (Date today)</comment>
-																								</usage>
-																								<usage>
-																									<comment>(2 points total)</comment>
-																								</usage>
-																							</usages>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Lookup cache</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Sorted collection (with own sortblock)</name>
-																						</impl_concept>
-																						<impl_concept>
-																							<name>Duplicate-removing set</name>
-																						</impl_concept>
-
-																						<comment>
-																							<para>V tabulce konceptů zaznamenejte, které koncepty objektového programování jste ve své semestrální práci použili, kde a jakým způsobem.
-																								Není třeba vyjmenovat všechny výskyty, stačí vyjmenovat zástupce, za které je udělováno hodnoceni.
-																								Pokud uvedete výskyty navíc, získáte tím "rezervu" pro případ, že některý z nich jste použili chybně.
-																								Za každý správně použitý koncept získáte body do hodnocení implementační části semestrální práce.</para>
-
-																								<para>Ohodnocení jednotlivých konceptů najdete na eduxu. Každý použitý koncept musí mít smysl vzhledem k zadání a účelu systému.</para>
-																							</comment>
-																						</impl_concepts>
-																					</implementation>
-
-																					<verification>
-																						<package>
-																							<file fileref="semestralka-uni-tests.st" />
-																						</package>
-																						<unit_tests>
-																							<unit_test>
-																								<name>#testQueryTaughtSubjects</name>
-																								<target>D1</target>
-																								<description>Popis testu by měl být u metody ve zdrojáku. Zde pište pouze příp. extra vysvětlení.</description>
-																							</unit_test>
-																							<unit_test>
-																								<name>#testRuleStaffOver18</name>
-																								<target>P2</target>
-																							</unit_test>
-																							<unit_test>
-																								<name>#testQueryTaughtSubjects</name>
-																								<description>Popis testu by měl být u metody ve zdrojáku. Zde pište pouze příp. extra vysvětlení.</description>
-																							</unit_test>
-																							<unit_test>
-																								<name>...</name>
-																								<target>...</target>
-																								<description>...</description>
-																							</unit_test>        
-																							<comment>
-																								<para>V tabulce unit testů vyjmenujte jednotlivé testy, které jste implementovali pro ověření správné funkčnosti aplikace - tedy
-																									implementaci jednotlivých stanovených dotazů, pravidel a omezení. 
-																									Ostatní testy (zde např. #testSalaryPolymorphism) nemusíte zde uvádět, je však třeba v kódu zdokumentovat jejich význam.
-																									JE NUTNÉ TESTY POKRÝT VŠECHNY DOTAZY A PRAVIDLA a též složitější pomocné funkčnosti, příp. výpočty.</para>
-																								</comment>
-																							</unit_tests>
-
-																						</verification>
-
-																						<conclusions>
-																							<title>Závěr</title>
-
-																							<para>Navržený a implementovaný systém...</para>
-
-																							<para>Za velkou přednost své semestrálky považuji, že se mi podařilo ...</para>
-
-																							<para>Systém je dále možné rozšířit o ..., jelikož se mě podařilo pružně navrhnout způsob implementace XY.</para>
-
-																							<comment>
-																								<para>V závěru se pokuste shrnout, co si z realizace práce odnášíte. Jak se vám podařilo dosáhnout požadavků, apod.</para>
-																							</comment>
-																						</conclusions>
-
-																						<references>
-																							<title>Odkazy</title>
-																							<comment>
-																								<para>Do odkazů uveďte všechny zdroje, ze kterých jste čerpali při realizaci vaší práce.</para>
-																							</comment>
-
-																							<comment>
-																								<para>A bude-li to třeba, můžete komentovat také odkazy.</para>
-																							</comment>
-
-																							<para>[1] Merunka, Vojtěch. Objektové modelování. Praha: ALfa, 2008. ISBN 978-80-87197-04-2.</para>
-																							<para>[2] Goldberg, Adele; Robson, David. Smalltalk-80, the Language and its Implementation. Reading, Massachusetts: Addison-Wesley Publishing Company, 1983. ISBN 0-201-11371-6. Dostupné z WWW <link url="http://stephane.ducasse.free.fr/FreeBooks/BlueBook/">http://stephane.ducasse.free.fr/FreeBooks/BlueBook/</link> (navštíveno 8.10.2011)</para>
-																						</references>
+																		
 																					</content>
 																				</sproject>
