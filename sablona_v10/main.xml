@@ -45,6 +45,7 @@
 					nebo e-mailu, což znemožnovalo synchronizaci.
 				</para>
 				<para>Zadavatel si od systému slibuje větší pohodlý pro klienty a ulehčení administrační zátěže zaměstnancům.</para>
+				<para>Systém má být navržený tak, aby nad ním bylo možné stavět další vrstvy například webovou aplikaci.</para>
 
 				<comment>
 					<para>UKÁZKOVÁ SEMESTRÁLKA SLOUŽÍ PRO OSVĚTLENÍ VÝZNAMU A OČEKÁVANÉHO OBSAHU JEDNOTLIVÝCH ČÁSTÍ.
@@ -64,14 +65,12 @@
 					</problem_statement>
 
 					<problem_domain>
-						<para>Nad systémem má být postavená webová aplikace, skrz kterou bude mít uživatel možnost rezervace a následné platby.</para>
-
-						<para>Zaměstnanec bude moci v administračním rozhraní rezervaci přidat nebo odebrat.</para>
+						<para>Zaměstnanec bude moci v administračním rozhraní rezervaci přidat, odebrat nebo editovat.</para>
 
 						<para>Hráč si se může ve skupině jiných hráčů zůčastnit hry. U hráče je nutné rozlišit, zda se jedná o amatéra nebo profesionála. Zamětnanec a hráč mají některé společné vlastnoti, kterými jsou jméno a věk.
 						 </para>
 
-						<para>Klíčovým bodem celé aplikace je rezervace. Rezervace je možná na jméno, datum a čas a vztahuje se na konkrétní hřište. K rezervaci je možné přikoupit speciální služby v podobě jídla a pití. U jídla nás zajímá váha a u pití objem.
+						<para>Klíčovým bodem celé aplikace je rezervace. Rezervace je možná na jméno, datum a čas a vztahuje se na konkrétní hřište. Jednotlivá hřiště nabízí speciální služby v podobě jídla a pití. Jídlo je charakteristické váhou a pití objemem.
 						 </para>
 						<comment>
 							<para>Tohle je komentář k 2. odstavci popisu semestrální práce.</para>
@@ -99,10 +98,19 @@
 
 						<functions>
 							<function>
-								Systém umožňuje přidat a odebrat rezervaci.
+								Zaměstnanec může přidat, odebrat a editovat rezervaci.
 							</function>
 							<function>
 								Systém umožňuje evidovat zaměstance a místa kde pracují.
+							</function>
+							<function>
+								Systém dokáže spočítat nejvyšší dosažené skóre pro konkrétního hráče.
+							</function>
+							<function>
+								Systém vypočítá celkový počet rezervací.
+							</function>
+							<function>
+								Systém vypočítá celkový počet návštěv za určitě období.
 							</function>
 							<comment>
 								<para>Klíčové funkce určují, co má systém dělat, aby naplnil svůj účel. Výčet funkcí je podrobné zadání úlohy, které vznikne rozborem problému,
@@ -135,6 +143,12 @@
 											</query>
 											<query>
 												Najdi rezervaci, která je pro nejvíc hráčů a zároveň má objem piva vyšší než 50 litrů. 
+											</query>	
+											<query>
+												Najdi hráče s nejvyšším skóre. 
+											</query>
+											<query>
+												Najdi nejstaršího zaměstnance. 
 											</query>	
 											<comment>
 												<para>Dotazy slouží k demonstraci správné funkčnosti klíčových funkcí systému. Pomocí těchto dotazů ukážeme,

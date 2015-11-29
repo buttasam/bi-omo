@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.3">
-  <zoom_level>7</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>308</y>
-      <w>147</w>
-      <h>70</h>
+      <x>512</x>
+      <y>408</y>
+      <w>168</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;kind&gt;&gt;
 Reservation
@@ -22,10 +22,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
-      <y>343</y>
-      <w>105</w>
-      <h>42</h>
+      <x>240</x>
+      <y>448</y>
+      <w>120</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;category&gt;&gt;
 Service</panel_attributes>
@@ -34,10 +34,10 @@ Service</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>427</y>
-      <w>84</w>
-      <h>35</h>
+      <x>184</x>
+      <y>592</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;subkind&gt;&gt;
 Food
@@ -47,10 +47,10 @@ Food
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>273</x>
-      <y>427</y>
-      <w>84</w>
-      <h>35</h>
+      <x>336</x>
+      <y>592</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;subkind&gt;&gt;
 Drink</panel_attributes>
@@ -59,46 +59,32 @@ Drink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>231</x>
-      <y>378</y>
-      <w>98</w>
-      <h>63</h>
+      <x>288</x>
+      <y>488</y>
+      <w>112</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;120.0;40.0;120.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;120.0;100.0;120.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>175</x>
-      <y>378</y>
-      <w>77</w>
-      <h>63</h>
+      <x>224</x>
+      <y>488</y>
+      <w>88</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;90.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>294</x>
-      <y>350</y>
-      <w>98</w>
-      <h>35</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=0.. *
-m2=1.. *
-contains</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+    <additional_attributes>90.0;10.0;90.0;100.0;10.0;100.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>42</y>
-      <w>147</w>
-      <h>91</h>
+      <x>512</x>
+      <y>112</y>
+      <w>168</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;kind&gt;&gt;
 Person
@@ -111,23 +97,27 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>609</x>
-      <y>70</y>
-      <w>147</w>
-      <h>42</h>
+      <x>776</x>
+      <y>112</y>
+      <w>168</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;role&gt;&gt;
 Player
-bg=orange</panel_attributes>
+bg=orange
+--
+numberOfPlays
+--
+findBestScore()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>518</x>
-      <y>84</y>
-      <w>105</w>
-      <h>21</h>
+      <x>672</x>
+      <y>152</y>
+      <w>120</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
@@ -135,10 +125,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>182</y>
-      <w>147</w>
-      <h>77</h>
+      <x>512</x>
+      <y>264</y>
+      <w>168</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;role&gt;&gt;
 Employee
@@ -147,16 +137,17 @@ salary Integer[1]
 --
 addReservation()
 deleteReservation()
+editReservation()
 bg=orange</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>126</y>
-      <w>21</w>
-      <h>70</h>
+      <x>584</x>
+      <y>200</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -164,10 +155,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>168</x>
-      <y>203</y>
-      <w>112</w>
-      <h>35</h>
+      <x>272</x>
+      <y>288</y>
+      <w>128</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;kind&gt;&gt;
 Playground
@@ -179,10 +170,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>273</x>
-      <y>203</y>
-      <w>119</w>
-      <h>35</h>
+      <x>392</x>
+      <y>288</y>
+      <w>136</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -193,10 +184,10 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>217</y>
-      <w>126</w>
-      <h>42</h>
+      <x>760</x>
+      <y>304</y>
+      <w>144</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;phase&gt;&gt;
 Amateur
@@ -206,10 +197,10 @@ Amateur
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>735</x>
-      <y>217</y>
-      <w>126</w>
-      <h>42</h>
+      <x>920</x>
+      <y>304</y>
+      <w>144</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;phase&gt;&gt;
 Professional</panel_attributes>
@@ -218,10 +209,10 @@ Professional</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>714</x>
-      <y>105</y>
-      <w>21</w>
-      <h>98</h>
+      <x>896</x>
+      <y>176</y>
+      <w>24</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -229,10 +220,10 @@ Professional</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>175</y>
-      <w>112</w>
-      <h>28</h>
+      <x>848</x>
+      <y>256</y>
+      <w>128</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=-
 {disjoint, compete}</panel_attributes>
@@ -241,10 +232,10 @@ Professional</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>182</y>
-      <w>21</w>
-      <h>49</h>
+      <x>848</x>
+      <y>264</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
@@ -253,10 +244,10 @@ Professional</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>763</x>
-      <y>182</y>
-      <w>21</w>
-      <h>49</h>
+      <x>952</x>
+      <y>264</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
@@ -265,10 +256,10 @@ Professional</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>518</x>
-      <y>413</y>
-      <w>147</w>
-      <h>42</h>
+      <x>672</x>
+      <y>528</y>
+      <w>168</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;collective&gt;&gt;
 Group
@@ -280,32 +271,36 @@ fg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
-      <y>105</y>
-      <w>98</w>
-      <h>322</h>
+      <x>728</x>
+      <y>176</y>
+      <w>136</w>
+      <h>368</h>
     </coordinates>
-    <panel_attributes>&lt; is part of</panel_attributes>
+    <panel_attributes>&lt; is part of
+m1=0.. *
+m2=1.. *</panel_attributes>
     <additional_attributes>120.0;10.0;120.0;80.0;10.0;80.0;10.0;440.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>518</x>
-      <y>448</y>
-      <w>105</w>
-      <h>70</h>
+      <x>672</x>
+      <y>568</y>
+      <w>120</w>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>&lt; plays</panel_attributes>
+    <panel_attributes>&lt; plays
+m1=1
+m2=1</panel_attributes>
     <additional_attributes>80.0;10.0;80.0;80.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>273</x>
-      <y>490</y>
-      <w>84</w>
-      <h>35</h>
+      <x>336</x>
+      <y>664</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;quantity&gt;&gt;
 Volume</panel_attributes>
@@ -314,10 +309,10 @@ Volume</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
-      <y>455</y>
-      <w>21</w>
-      <h>49</h>
+      <x>376</x>
+      <y>624</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -325,10 +320,10 @@ Volume</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>490</y>
-      <w>84</w>
-      <h>35</h>
+      <x>184</x>
+      <y>664</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;quantity&gt;&gt;
 Weight</panel_attributes>
@@ -337,10 +332,10 @@ Weight</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>175</x>
-      <y>455</y>
-      <w>21</w>
-      <h>49</h>
+      <x>224</x>
+      <y>624</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -348,10 +343,10 @@ Weight</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>483</y>
-      <w>147</w>
-      <h>42</h>
+      <x>512</x>
+      <y>608</y>
+      <w>168</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;kind&gt;&gt;
 Game
@@ -362,10 +357,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>434</x>
-      <y>371</y>
-      <w>84</w>
-      <h>126</h>
+      <x>576</x>
+      <y>480</y>
+      <w>96</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 {inseparable}</panel_attributes>
@@ -374,24 +369,40 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>434</x>
-      <y>252</y>
-      <w>56</w>
-      <h>70</h>
+      <x>576</x>
+      <y>352</y>
+      <w>64</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt; edits</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>231</x>
-      <y>231</y>
-      <w>161</w>
-      <h>105</h>
+      <x>344</x>
+      <y>320</y>
+      <w>184</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=-
-&lt; has</panel_attributes>
+&lt; has
+m1=1
+m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0;210.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>320</y>
+      <w>72</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0.. *
+m2=1.. *
+contains</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
