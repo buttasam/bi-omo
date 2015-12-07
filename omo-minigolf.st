@@ -1,0 +1,1 @@
+Object subclass: #Person	instanceVariableNames: 'name age'	classVariableNames: ''	poolDictionaries: ''	category: 'omo-minigolf'!
