@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>1110</x>
+      <y>130</y>
+      <w>140</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>*Person*
+--
+name:String[1]
+age: Integer = 0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>990</x>
+      <y>450</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Amatuer
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>1070</x>
+      <y>220</y>
+      <w>110</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+m2=1
+</panel_attributes>
+    <additional_attributes>30;230;90;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>1160</x>
+      <y>220</y>
+      <w>120</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>100;230;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>1190</x>
+      <y>450</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Professional
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>660</x>
+      <y>430</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>PlayerRole
+--
+numberOfPlays: Integer
+--
++findBestScore(): Integer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>470</x>
+      <y>240</y>
+      <w>290</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>EmployeeRole
+--
+salary: Integer[1]
+--
++addReservation(res: Reservation)
++deleteReservation(res: Reservation)
++editReservation(res: Reservation)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>750</x>
+      <y>160</y>
+      <w>380</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+m2=1
+</panel_attributes>
+    <additional_attributes>30;270;360;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>560</x>
+      <y>130</y>
+      <w>570</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+m2=1
+</panel_attributes>
+    <additional_attributes>30;110;550;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>1090</x>
+      <y>290</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.
+XOR
+r1=phase
+r2=phase
+</panel_attributes>
+    <additional_attributes>30;50;160;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>260</x>
+      <y>240</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Playground
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>40</x>
+      <y>270</y>
+      <w>171</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>*_employees: Set_*
+
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to
+//define the element's behavior.
+//
+
+int y=20;
+
+for(String textline : textlines) {
+	y = y + textHeight();
+	printCenter(textline,y);
+}
+
+height = onGrid(y + 25);
+
+//drawRect(0,0,width,height);
+
+Polygon p = new Polygon();
+p.addPoint(0, 20);
+p.addPoint(width/2, 0);
+p.addPoint(width, 20);
+p.addPoint(width, height-20);
+p.addPoint(width/2, height);
+p.addPoint(0, height-20);
+drawPolygon(p);
+</custom_code>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>180</x>
+      <y>270</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>80;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>20</x>
+      <y>580</y>
+      <w>171</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>*_food: Set_*
+
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to
+//define the element's behavior.
+//
+
+int y=20;
+
+for(String textline : textlines) {
+	y = y + textHeight();
+	printCenter(textline,y);
+}
+
+height = onGrid(y + 25);
+
+//drawRect(0,0,width,height);
+
+Polygon p = new Polygon();
+p.addPoint(0, 20);
+p.addPoint(width/2, 0);
+p.addPoint(width, 20);
+p.addPoint(width, height-20);
+p.addPoint(width/2, height);
+p.addPoint(0, height-20);
+drawPolygon(p);
+</custom_code>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>290</x>
+      <y>470</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Service
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>160</x>
+      <y>500</y>
+      <w>150</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>130;30;30;110</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>110</x>
+      <y>690</y>
+      <w>171</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>*_drink: Set_*
+
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to
+//define the element's behavior.
+//
+
+int y=20;
+
+for(String textline : textlines) {
+	y = y + textHeight();
+	printCenter(textline,y);
+}
+
+height = onGrid(y + 25);
+
+//drawRect(0,0,width,height);
+
+Polygon p = new Polygon();
+p.addPoint(0, 20);
+p.addPoint(width/2, 0);
+p.addPoint(width, 20);
+p.addPoint(width, height-20);
+p.addPoint(width/2, height);
+p.addPoint(0, height-20);
+drawPolygon(p);
+</custom_code>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>250</x>
+      <y>530</y>
+      <w>140</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>120;30;30;190</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>390</x>
+      <y>700</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Drink
+--
+volume: Integer[1]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>600</x>
+      <y>700</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Food
+--
+weight: Integer[1]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>30</x>
+      <y>180</y>
+      <w>171</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>*_reservations: Set_*
+
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to
+//define the element's behavior.
+//
+
+int y=20;
+
+for(String textline : textlines) {
+	y = y + textHeight();
+	printCenter(textline,y);
+}
+
+height = onGrid(y + 25);
+
+//drawRect(0,0,width,height);
+
+Polygon p = new Polygon();
+p.addPoint(0, 20);
+p.addPoint(width/2, 0);
+p.addPoint(width, 20);
+p.addPoint(width, height-20);
+p.addPoint(width/2, height);
+p.addPoint(0, height-20);
+drawPolygon(p);
+</custom_code>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>170</x>
+      <y>180</y>
+      <w>110</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>90;100;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>860</x>
+      <y>630</y>
+      <w>200</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Reservation
+--
+name: String[1]
+date: Date[1]
+time: String[1]</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
