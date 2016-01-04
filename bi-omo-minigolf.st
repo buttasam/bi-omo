@@ -1,4 +1,4 @@
-TestCase subclass: #TestMinigolf	instanceVariableNames: 'employee'	classVariableNames: ''	poolDictionaries: ''	category: 'bi-omo-minigolf-tests'!!TestMinigolf methodsFor: 'initialize-release' stamp: 'Butta 1/4/2016 12:15'!setUp	"comment stating purpose of message"	employee := EmployeeRole new.	employee salary: '15000'.! !!TestMinigolf methodsFor: 'running' stamp: 'Butta 1/4/2016 12:18'!testEmployeeSalary	self assert: employee salary = '15000'. ! !Object subclass: #Reservation	instanceVariableNames: 'name date time reservations'	classVariableNames: ''	poolDictionaries: ''	category: 'bi-omo-minigolf'!!Reservation commentStamp: '<historical>' prior: 0!Reservation.  The comment should state the purpose of the class and also explain any unobvious aspects of the implementation.
+TestCase subclass: #TestMinigolf	instanceVariableNames: 'employee playground'	classVariableNames: ''	poolDictionaries: ''	category: 'bi-omo-minigolf-tests'!!TestMinigolf methodsFor: 'initialize-release' stamp: 'Butta 1/4/2016 15:31'!setUp	"comment stating purpose of message"	employee := EmployeeRole new.	employee salary: '15000'.		playground := Playground new.	playground addEmployee: employee .	! !!TestMinigolf methodsFor: 'running' stamp: 'Butta 1/4/2016 15:40'!testRaiseSalaryTest		| x |		x := playground employees detect: [ :each | each salary = '15000' ].	playground raiseSalaryForEach: '100'.		self assert: x salary = '15100'. ! !!TestMinigolf methodsFor: 'running' stamp: 'Butta 1/4/2016 14:40'!testEmployeeSalary	self assert: employee salary = '15000'. ! !!TestMinigolf methodsFor: 'running' stamp: 'Butta 1/4/2016 15:31'!testEmployeesCount	self assert: playground employeesCount = 1. 	! !Object subclass: #Reservation	instanceVariableNames: 'name date time reservations'	classVariableNames: ''	poolDictionaries: ''	category: 'bi-omo-minigolf'!!Reservation commentStamp: '<historical>' prior: 0!Reservation.  The comment should state the purpose of the class and also explain any unobvious aspects of the implementation.
 
 Instance Variables
   name	 String  Description...
@@ -65,15 +65,17 @@ Instance Variables
   name	 String  Description...
 
 Constraints
-!!Playground methodsFor: 'initialize-release' stamp: 'Butta 1/4/2016 12:10'!initialize
+!!Playground methodsFor: 'as yet unclassified' stamp: 'Butta 1/4/2016 15:18'!addEmployee: employee	employees add: employee.  ^ self ! !!Playground methodsFor: 'initialize-release' stamp: 'Butta 1/4/2016 12:10'!initialize
   "Initialize a newly created instance. This method must answer the receiver."
   super initialize.
   name := String new "mandatory String ".  employees := Set new.
-  ^self! !!Playground methodsFor: 'public' stamp: 'Uxf2Smalltalk 1/2/2016 16:6'!employeesCount
-  ^ self shouldBeImplemented! !!Playground methodsFor: 'public' stamp: 'Uxf2Smalltalk 1/2/2016 16:6'!avgSalary
+  ^self! !!Playground methodsFor: 'public' stamp: 'Butta 1/4/2016 15:12'!employeesCount
+  ^ employees size! !!Playground methodsFor: 'public' stamp: 'Butta 1/4/2016 15:22'!raiseSalaryForEach: delta
+  employees 	do: [ :each |			each salary: each salary + delta.		 ]! !!Playground methodsFor: 'public' stamp: 'Uxf2Smalltalk 1/2/2016 16:6'!avgSalary
   ^ self shouldBeImplemented! !!Playground methodsFor: 'accessing' stamp: 'Uxf2Smalltalk 1/2/2016 16:6'!name: aString
   name := aString! !!Playground methodsFor: 'accessing' stamp: 'Uxf2Smalltalk 1/2/2016 16:6'!name
-  ^name! !Object subclass: #Professional	instanceVariableNames: ''	classVariableNames: ''	poolDictionaries: ''	category: 'bi-omo-minigolf'!!Professional commentStamp: '<historical>' prior: 0!Professional.  The comment should state the purpose of the class and also explain any unobvious aspects of the implementation.
+  ^name! !!Playground methodsFor: 'accessing' stamp: 'Butta 1/4/2016 15:38'!employees
+  ^ employees! !Object subclass: #Professional	instanceVariableNames: ''	classVariableNames: ''	poolDictionaries: ''	category: 'bi-omo-minigolf'!!Professional commentStamp: '<historical>' prior: 0!Professional.  The comment should state the purpose of the class and also explain any unobvious aspects of the implementation.
 
 Instance Variables
 
