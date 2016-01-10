@@ -42,20 +42,14 @@ return false;
 
 <!-- Informace o autorovi -->
         <h3 class="author">
-          <xsl:value-of select="//author1/aname"/> ( <xsl:value-of select="//author1/uname"/> ), <xsl:value-of select="//author2/aname"/> ( <xsl:value-of select="//author2/uname"/> )          <xsl:value-of select="//seminar"/>
+          <xsl:value-of select="//aname"/> ( <xsl:value-of select="//uname"/> )          <xsl:value-of select="//seminar"/>
         </h3>
         <h4 class="author">
          <xsl:element name="a">
 		<xsl:attribute name ="href">
-			mailto:<xsl:value-of select="//author1/email"/>
+			mailto:<xsl:value-of select="//email"/>
                </xsl:attribute>
-              <xsl:value-of select="//author1/email"/>
-	   </xsl:element>,
-     <xsl:element name="a">
-		<xsl:attribute name ="href">
-			mailto:<xsl:value-of select="//author2/email"/>
-               </xsl:attribute>
-              <xsl:value-of select="//author2/email"/>
+              <xsl:value-of select="//email"/>
 	   </xsl:element>
         </h4>
 
@@ -90,7 +84,7 @@ return false;
       <xsl:if test="local-name()='comment'">
         <p class="comment" name="comment"> <xsl:apply-templates mode="moje_para"/> </p>
       </xsl:if> 
-    </xsl:for-each>                    
+    </xsl:for-each>
     
 <!-- Ucel -->
     <h3>Účel</h3>
